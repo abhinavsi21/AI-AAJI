@@ -1,0 +1,798 @@
+# AI AAJI — ULTIMATE MASTER WEBSITE BUILD PROMPT
+## Official Product Website · Live Gemini Voice Demo · Contact-to-Purchase
+
+Act as a world-class UI/UX designer, senior full-stack engineer, creative frontend developer, AI integration specialist, and SaaS product strategist.
+
+Build the official website for **AI Aaji**, an AI-powered personal assistant created by two developer-founders, Abhinav Singh and Tanisha.
+
+This must be a complete, functional, responsive, premium-quality website—not a static mockup, generic template, or simple landing page.
+
+The website must showcase the product, explain its capabilities, let visitors talk to AI Aaji using a live Gemini Realtime voice model, offer a floating AI chatbot, provide a free software download, display Base and Premium pricing, introduce the founders, and support contact-to-purchase through a prefilled email.
+
+**Important: I am using Google AI Studio to build this website. Inspect the existing project before making changes. Preserve working functionality, use the existing architecture where appropriate, and implement the website directly in the project. Do not just give me instructions or a design plan.**
+
+---
+
+# 1. BRAND IDENTITY
+
+**Brand name:** AI Aaji
+
+**Product category:** Intelligent AI Personal Assistant
+
+**Primary tagline:** Your AI. Your Voice. Your Everyday Assistant.
+
+**Alternative hero headline:** Meet AI Aaji. Your world, a little easier.
+
+**Contact email:** aiaajiofficial@gmail.com
+
+**Founders:**
+- Abhinav Singh — Co-Founder & Product Lead
+- Tanisha — Co-Founder & Technical Lead
+
+Both founders are developers.
+
+## Brand positioning
+
+AI Aaji is an AI-powered personal assistant designed to make digital interactions more natural and everyday tasks easier through real-time voice conversations, multimodal intelligence, supported device controls, and intelligent task assistance.
+
+It is not merely a chatbot. It is an assistant designed to bring conversational AI closer to the way people naturally interact with technology.
+
+Communicate this vision clearly throughout the website.
+
+Do not invent customer numbers, testimonials, reviews, awards, or performance statistics.
+
+---
+
+# 2. DESIGN SYSTEM — PREMIUM AND DISTINCTIVE
+
+Create a visually outstanding dark-first website inspired by the quality of Apple product pages, Linear, Framer, and modern premium SaaS experiences. Use these as quality references, not templates to copy.
+
+The result must have its own recognizable AI Aaji identity.
+
+## Color palette
+
+Use the following design tokens consistently:
+
+- Main background: `#080B14`
+- Secondary background: `#0D1220`
+- Card background: `#12192A`
+- Elevated surface: `#182136`
+- Primary accent: `#8065FF`
+- Secondary accent: `#35D9F2`
+- Highlight: `#B8A6FF`
+- Main text: `#F7F8FF`
+- Secondary text: `#A7B0C5`
+- Borders: `rgba(255,255,255,0.10)`
+- Success: `#43D9A3`
+- Error: `#FF6B81`
+
+Use violet-to-cyan gradients for selected CTAs, the AI orb, waveform visualizations, and subtle decorative elements.
+
+Avoid making the entire website glow. Use negative space, contrast, typography, and composition to establish a premium visual hierarchy.
+
+## Typography
+
+Use:
+- **Space Grotesk:** Headlines and major section titles.
+- **Inter:** Body copy, navigation, buttons, and interface text.
+- **Inter Medium:** Small labels, feature metadata, and UI indicators.
+
+Load fonts efficiently and provide system fallbacks.
+
+## Visual language
+
+Implement:
+- A signature animated AI orb.
+- Ambient radial gradients.
+- Subtle geometric grids.
+- Refined glassmorphism panels.
+- Elegant shadows and thin borders.
+- Smooth section transitions.
+- Subtle hover interactions.
+- Animated voice waveforms.
+- Carefully composed product mockups.
+- Scroll-triggered reveal animations.
+- Polished loading, empty, success, and error states.
+
+Use CSS animations wherever possible. Respect `prefers-reduced-motion`.
+
+The website must feel modern, intelligent, approachable, and premium—not cluttered, childish, or excessively futuristic.
+
+---
+
+# 3. NAVIGATION
+
+Create a sticky navigation bar with:
+
+- AI Aaji logo or custom wordmark.
+- Features
+- Live Demo
+- Pricing
+- Founders
+- FAQ
+- **Get AI Aaji** CTA
+
+At the top, use a transparent background. After scrolling, apply a subtle dark backdrop with a thin border and restrained blur.
+
+Add a polished responsive mobile menu.
+
+All links must navigate to their actual sections. Buttons must perform their intended actions.
+
+---
+
+# 4. HERO SECTION
+
+Make the first screen visually memorable.
+
+Eyebrow:
+
+`MEET YOUR EVERYDAY AI ASSISTANT`
+
+Headline:
+
+**Meet AI Aaji. Your world, a little easier.**
+
+Supporting copy:
+
+“Talk naturally. Explore ideas. Get help with everyday digital tasks. Meet an AI assistant designed to bring voice, intelligence, and automation together.”
+
+Primary CTA: **Try Live Demo**
+
+Secondary CTA: **Explore Features**
+
+Text link: **Download Free Version**
+
+## Hero visual
+
+Create a beautiful animated AI orb on the right side, surrounded by subtle violet and cyan lighting.
+
+Compose a floating interface around it featuring:
+- A sample conversational message.
+- An audio waveform.
+- A microphone indicator.
+- Small Voice, Vision, and Automation labels.
+- A compact assistant status panel.
+
+The visual should feel like an actual software product.
+
+Do not use generic robot stock images or oversized illustrations that make the page look like a template.
+
+On mobile, stack the content and product visual elegantly. Ensure the main CTA is immediately accessible.
+
+---
+
+# 5. PRODUCT EXPERIENCE PREVIEW
+
+Create a product showcase section with a realistic, premium interface preview.
+
+Show:
+- A conversational interface.
+- User and AI messages.
+- A voice input control.
+- A text input.
+- A waveform or activity indicator.
+- Example user requests.
+
+Example prompts:
+- “Hello Aaji, what can you help me with?”
+- “Explain what I am looking at.”
+- “Help me with a digital task.”
+- “Tell me about your features.”
+
+Keep the interface visually connected to the actual live demo.
+
+Do not represent hardcoded demonstration messages as real-time AI responses. If the preview is illustrative, label it as a product preview.
+
+---
+
+# 6. FEATURES SECTION
+
+Section title:
+
+**More than answers. An assistant for everyday tasks.**
+
+Create six premium feature cards with individual icons and elegant hover interactions.
+
+### 01 — Real-Time Voice AI
+Natural, conversational voice interaction powered by supported real-time AI technology.
+
+### 02 — Visual Understanding
+Designed to understand supported camera or screen input and provide contextual assistance.
+
+### 03 — Smart Task Assistance
+Help with supported everyday digital tasks and workflows.
+
+### 04 — Device and Application Controls
+Interact with supported device functions and applications.
+
+### 05 — Intelligent Information Access
+Get answers, research assistance, and access to relevant information.
+
+### 06 — Personalized Conversations
+Use supported conversational context and saved preferences to make interactions more relevant.
+
+Use Lucide icons or a consistent equivalent.
+
+Only describe features as currently available if the existing software genuinely implements them. Clearly label planned or incomplete capabilities.
+
+---
+
+# 7. LIVE GEMINI REALTIME VOICE DEMO — CORE FEATURE
+
+This is one of the most important parts of the entire website.
+
+The website must have a dedicated section where visitors can speak directly with AI Aaji in real time.
+
+Section heading:
+
+**Meet AI Aaji. Have a conversation.**
+
+Supporting text:
+
+“Forget typing for a moment. Start talking and experience a more natural way to interact with AI.”
+
+CTA:
+
+**Start Talking to AI Aaji**
+
+## Critical integration requirement
+
+My existing AI Aaji software uses Google's Gemini Realtime voice experience with the Aoede voice.
+
+**Inspect the existing project's configuration or the supplied software integration details and use the same compatible Gemini Realtime model and voice configuration wherever possible.**
+
+Do not randomly choose a different model or substitute a standard text-to-speech system.
+
+If the exact model used by the desktop software cannot be established from the available code, inspect the existing integration, SDK version, and configuration. Do not guess or claim that a model is identical without verification.
+
+Use the current, documented Google Gen AI Live API integration appropriate for the model selected.
+
+Make the model ID configurable through environment variables or server-side configuration.
+
+Use **Aoede** when supported by the selected model and API version. If it is unsupported, display a clear configuration error and document the compatibility issue instead of silently switching voices.
+
+## The website assistant's identity
+
+The voice assistant must introduce itself as AI Aaji.
+
+It should know the following facts:
+
+- Its name is AI Aaji.
+- It is an AI-powered personal assistant.
+- It was created by Abhinav Singh and Tanisha.
+- Abhinav is Co-Founder & Product Lead.
+- Tanisha is Co-Founder & Technical Lead.
+- Both founders are developers.
+- Its purpose is to simplify digital interactions and everyday tasks.
+- It offers real-time voice interaction and supports other AI-assisted capabilities depending on the product version.
+- Its website offers a free version and two paid editions.
+- Base costs ₹399.
+- Premium costs ₹699.
+- Purchases currently happen through email enquiry, not direct website checkout.
+- The official contact email is aiaajiofficial@gmail.com.
+- Visitors can request a free software download using the download section.
+- It must not invent information about features, policies, or software compatibility that is not present in its verified knowledge base.
+
+## Voice assistant personality
+
+AI Aaji should sound:
+- Warm and welcoming.
+- Intelligent and helpful.
+- Natural and conversational.
+- Confident but not overly formal.
+- Concise by default.
+- Friendly without becoming childish.
+
+It should feel like the same assistant experience as the AI Aaji software, not a generic customer support bot.
+
+### Suggested first greeting
+
+“Hello! I’m AI Aaji, your AI assistant. I was created by Abhinav Singh and Tanisha to make everyday interactions with technology simpler. You can ask me about AI Aaji, explore my features, or simply have a conversation. What would you like to talk about?”
+
+Do not force this exact greeting on every conversation. Let the assistant respond naturally after its initial introduction.
+
+## Voice demo interface
+
+Create a visually beautiful interface containing:
+- A central animated AI orb.
+- Start Conversation button.
+- End Conversation button.
+- Microphone permission state.
+- Connecting, Connected, Listening, Speaking, Reconnecting, and Error states where applicable.
+- Live audio activity visualization.
+- Conversation transcript if actual transcript data is available.
+- Mute control if supported by the integration.
+- A clear reconnect action.
+- An optional text input fallback.
+- A brief privacy note.
+
+The orb must react to the actual audio state when possible. Use real microphone and assistant audio activity to drive its animations, rather than permanently animating it as though a conversation is occurring.
+
+## Audio requirements
+
+Implement:
+- Genuine real-time audio streaming.
+- Natural conversational responses.
+- Interruptions and barge-in where supported.
+- Audio playback with correct lifecycle handling.
+- Microphone permissions requested only after the visitor starts the demo.
+- Clean audio resource disposal when a conversation ends.
+- Protection against duplicate sessions.
+- Graceful handling of denied microphone permissions.
+- Connection timeouts and reconnect options.
+- Bounded retries with backoff for retryable failures.
+- Clear handling for authentication errors, model errors, rate limits, quota errors, and temporary service outages.
+
+Do not record the visitor's voice or store conversation audio by default.
+
+## Secure Gemini integration
+
+Never place a permanent Gemini API key in frontend source code, public environment variables, browser storage, or exposed configuration files.
+
+Implement the documented secure integration pattern supported by the chosen Live API. Use a backend session broker or short-lived credentials where supported.
+
+If direct browser connections are supported for the selected model, use the official secure credential workflow. Keep permanent API credentials server-side.
+
+Do not send secrets to console logs.
+
+Validate requests, apply reasonable session limits, and clean up unused sessions.
+
+The website must still render correctly if the Gemini credentials are missing. Show a helpful configuration message in the demo section rather than crashing the application.
+
+**Important:** Do not use a normal request-response chatbot, a prerecorded audio file, a fake waveform, or browser speech synthesis as a substitute for the requested Gemini Realtime demo.
+
+---
+
+# 8. FLOATING AI AAJI CHATBOT
+
+In addition to the dedicated live voice demo, create a floating chat widget that appears throughout the website.
+
+The widget should open from a small, elegant AI Aaji orb or chat icon in the bottom-right corner.
+
+Create a refined dark interface with:
+- AI Aaji identity.
+- Welcome message.
+- Message bubbles.
+- Text input.
+- Send button.
+- Loading indicator.
+- Close and minimize controls.
+- Suggested questions.
+- A shortcut to the voice demo.
+- A shortcut to the pricing section.
+- A shortcut to the free download section.
+- A contact button.
+
+Suggested questions:
+- “What is AI Aaji?”
+- “What features do you offer?”
+- “What is the difference between Base and Premium?”
+- “How can I purchase AI Aaji?”
+- “Can I download it for free?”
+- “Can I talk to you using voice?”
+
+## Chatbot intelligence
+
+Connect the chatbot to a configured backend model if real AI-generated text responses are enabled.
+
+Provide a structured, editable knowledge base containing verified AI Aaji information, pricing, features, contact details, and download availability.
+
+The chatbot must not invent facts or claim to have performed actions it cannot perform.
+
+If the AI text service is unavailable or unconfigured, provide an honest, clearly labelled FAQ fallback rather than pretending a live AI model is responding.
+
+The floating chatbot and the Gemini Realtime voice demo may share the same product knowledge, but they do not need to share the same technical session.
+
+Make the widget keyboard accessible and ensure it does not obstruct critical mobile controls.
+
+---
+
+# 9. HOW AI AAJI WORKS
+
+Create a visually engaging three-step section.
+
+**01 — Talk naturally**
+
+Start with voice or text and explain what you need.
+
+**02 — AI understands**
+
+AI Aaji processes supported inputs and available context.
+
+**03 — Get assistance**
+
+Receive relevant responses and assistance with supported tasks.
+
+Use a horizontal layout on desktop and a vertical timeline on mobile.
+
+Avoid making unsupported claims about complete autonomy or compatibility with every application.
+
+---
+
+# 10. PRICING — THREE PLANS
+
+Section title:
+
+**Start free. Choose what works for you.**
+
+Supporting copy:
+
+“Explore AI Aaji for free or choose an edition that fits your needs.”
+
+Display three beautiful pricing cards.
+
+## FREE — ₹0
+
+Include:
+- Access to the free software version.
+- Explore the features included in the free edition.
+- Download the available release.
+
+CTA: **Download Free**
+
+The button must point to a real, configured software download URL.
+
+If the release URL is not configured, show a polished coming-soon or contact option. Never invent a download URL or simulate a successful download.
+
+## BASE — ₹399
+
+Include:
+- Access to the Base edition.
+- Clearly listed included features, based on verified product information.
+- A suitable entry point for customers who want the essential experience.
+
+CTA: **Purchase Base — ₹399**
+
+## PREMIUM — ₹699
+
+Include:
+- Access to the Premium edition.
+- Clearly listed additional capabilities, based on verified product information.
+- Position it as the more capable option only when the feature differences are confirmed.
+
+CTA: **Purchase Premium — ₹699**
+
+Do not invent differences between Base and Premium. If the details are not yet known, use a clearly marked configuration placeholder for the founder to complete before publication.
+
+Do not imply that the prices are monthly, annual, recurring, lifetime, or inclusive of particular taxes unless confirmed.
+
+Do not integrate Razorpay at this stage.
+
+## Contact-to-purchase behaviour
+
+When a visitor clicks either paid CTA, immediately open a new email draft addressed to:
+
+`aiaajiofficial@gmail.com`
+
+Use a properly encoded `mailto:` URL with the selected plan and price prefilled.
+
+Base email subject:
+
+`AI Aaji Base Edition — Purchase Enquiry`
+
+Base email body:
+
+Hello AI Aaji Team,
+
+I am interested in purchasing the AI Aaji Base Edition priced at ₹399.
+
+Please share the purchase process, payment instructions, edition details, and the steps to receive the software after payment.
+
+My details:
+
+Name:
+Email:
+Message:
+
+Thank you.
+
+Premium email subject:
+
+`AI Aaji Premium Edition — Purchase Enquiry`
+
+Premium email body:
+
+Hello AI Aaji Team,
+
+I am interested in purchasing the AI Aaji Premium Edition priced at ₹699.
+
+Please share the purchase process, payment instructions, edition details, and the steps to receive the software after payment.
+
+My details:
+
+Name:
+Email:
+Message:
+
+Thank you.
+
+The browser should open the visitor's default email application with the draft prefilled.
+
+Do not falsely claim that the email has been sent. The visitor must review and send it themselves.
+
+Because email clients do not reliably prepopulate the visitor's identity, do not assume their name or email address. Leave these fields blank for the visitor to complete.
+
+Encode the subject and body safely using `encodeURIComponent` or an equivalent method.
+
+If the device does not have a configured email application, provide a visible fallback with the contact email and a Copy Email button.
+
+Use the same pattern for any additional purchase CTA.
+
+---
+
+# 11. FREE SOFTWARE DOWNLOAD
+
+Create a dedicated download section with the heading:
+
+**Your AI Aaji journey starts here.**
+
+Supporting text:
+
+“Explore the free version and discover a more natural way to interact with AI.”
+
+Include:
+- A polished software mockup.
+- Download Free button.
+- Version number, when available.
+- Release date, when available.
+- Supported operating systems, once verified.
+- Installation guide link, if available.
+- A brief security and installation note.
+
+Use a configurable release URL.
+
+Use a genuine software release asset or official download host.
+
+Do not invent an installer, version number, operating system compatibility, or download link.
+
+If the release is not ready, provide a coming-soon state and an option to contact aiaajiofficial@gmail.com.
+
+---
+
+# 12. FOUNDERS SECTION
+
+Section title:
+
+**Built with a vision for more human AI.**
+
+Create two premium founder profile cards with space for portrait photographs that I will supply later.
+
+## Abhinav Singh
+**Co-Founder & Product Lead**
+
+Placeholder biography:
+
+“Leads the product vision, experience, and direction of AI Aaji, transforming an ambitious idea into a practical personal AI assistant.”
+
+## Tanisha
+**Co-Founder & Technical Lead**
+
+Placeholder biography:
+
+“Leads technical development and engineering, building the systems and experiences that bring AI Aaji to life.”
+
+Both founders are developers.
+
+Add replaceable portrait assets or clearly documented image paths. Do not invent photographs, credentials, biographies, or professional achievements.
+
+Use consistent image ratios, subtle lighting, refined borders, and elegant hover effects.
+
+Add this founder note:
+
+“We believe technology should work around people, not the other way around. AI Aaji is our step towards making AI more natural, accessible, and useful in everyday life.”
+
+Keep the section easy to update with real photographs, biographies, and social links later.
+
+---
+
+# 13. FAQ SECTION
+
+Build accessible expandable FAQ cards covering:
+
+1. What is AI Aaji?
+2. What can AI Aaji do?
+3. Is there a free version?
+4. What is the difference between Base and Premium?
+5. How do I purchase an edition?
+6. Does the live voice demo need microphone access?
+7. Is an internet connection required?
+8. Which devices and operating systems are supported?
+9. How can I install or update the software?
+10. How can I contact the team?
+
+Use verified product information.
+
+Do not invent refund policies, licence terms, device compatibility, offline functionality, or product limitations. Keep unconfirmed information editable and clearly flagged for review.
+
+---
+
+# 14. FINAL CALL TO ACTION
+
+Create a cinematic but restrained closing section.
+
+Headline:
+
+**A more natural way to work with AI.**
+
+Supporting text:
+
+“Discover AI Aaji, experience a live conversation, and explore the version that suits you.”
+
+Buttons:
+- **Talk to AI Aaji**
+- **Download Free**
+
+Include a small contact link to aiaajiofficial@gmail.com.
+
+Use an elegant animated orb or gradient visual that connects to the hero design.
+
+---
+
+# 15. FOOTER
+
+Include:
+- AI Aaji logo and concise description.
+- Features.
+- Live Demo.
+- Pricing.
+- Founders.
+- FAQ.
+- Contact email.
+- Privacy Policy.
+- Terms of Use.
+- Dynamically generated copyright year.
+
+Create meaningful privacy and terms pages or drafts for review before launch.
+
+Do not claim legal compliance or publish fabricated legal details.
+
+---
+
+# 16. TECHNICAL ARCHITECTURE
+
+First inspect the existing Google AI Studio project and identify its framework, dependencies, routes, and current implementation.
+
+Preserve useful existing work. Do not overwrite a working project blindly.
+
+If a new frontend is required, use React, TypeScript, and a modern Vite-based setup where appropriate. Use Tailwind CSS or a consistent custom CSS system.
+
+Create reusable components such as:
+- `Navbar`
+- `Hero`
+- `ProductPreview`
+- `FeatureGrid`
+- `VoiceDemo`
+- `ChatWidget`
+- `HowItWorks`
+- `Pricing`
+- `FounderSection`
+- `FAQ`
+- `Footer`
+
+Create dedicated services and configuration modules for:
+- Gemini Live API.
+- Optional chatbot text generation.
+- Product knowledge.
+- Pricing and feature definitions.
+- Download links.
+- Contact actions.
+
+Keep the voice integration separate from the visual components.
+
+Use environment variables for secrets and configuration. Include a safe `.env.example`.
+
+Do not expose server secrets in variables intended for browser bundles.
+
+If the project needs a backend, implement the necessary API endpoints and document how to run them.
+
+Ensure the app builds and runs in the actual target environment. Do not assume that a server process, secret manager, or filesystem is available unless it is supported by the deployment platform.
+
+---
+
+# 17. RESPONSIVENESS AND ACCESSIBILITY
+
+The website must look excellent on:
+- Android smartphones.
+- iPhones.
+- Tablets.
+- Laptops.
+- Large desktop displays.
+
+Requirements:
+- No horizontal overflow.
+- Responsive typography.
+- Appropriate touch targets.
+- Readable contrast.
+- Semantic HTML.
+- Keyboard-accessible navigation.
+- Accessible labels and error states.
+- Reduced-motion support.
+- Stable layouts during loading.
+- No critical UI hidden behind the chat widget.
+- No mobile layout broken by long headlines or pricing cards.
+
+---
+
+# 18. SEO AND PERFORMANCE
+
+Implement:
+- A meaningful page title and meta description.
+- Open Graph metadata.
+- Social sharing image configuration.
+- Favicon placeholders.
+- Semantic headings.
+- Efficient font loading.
+- Responsive images.
+- Lazy loading for non-critical media.
+- Appropriate code splitting.
+- A sitemap and robots.txt where appropriate.
+- Sensible security headers.
+- A content security policy compatible with the actual API integrations.
+
+Aim for excellent Core Web Vitals.
+
+Do not add fake customer reviews, fabricated structured data, or unverified business information.
+
+---
+
+# 19. TESTING AND VALIDATION
+
+Do not stop after generating the first visual design.
+
+Run and inspect the website.
+
+Verify:
+- All navigation links work.
+- All sections render correctly.
+- The mobile menu works.
+- The voice demo starts and ends cleanly.
+- Microphone permissions are requested at the correct time.
+- The selected Gemini model and Aoede voice are configured correctly.
+- Missing credentials produce a clear setup state.
+- Audio resources are cleaned up.
+- Temporary connection failures can be recovered from.
+- No permanent API key is exposed in frontend assets.
+- The floating chatbot opens, closes, and handles input.
+- Chatbot knowledge is consistent with the pricing section.
+- Base opens the correct prefilled email draft.
+- Premium opens the correct prefilled email draft.
+- Email subjects and bodies are properly encoded.
+- The email fallback works.
+- Free Download uses a real configured URL or displays an honest unavailable state.
+- Founder photographs can be replaced easily.
+- No buttons are decorative or non-functional.
+- No console errors, broken images, or missing imports remain.
+- The application builds successfully.
+
+Do not claim that the Gemini Live integration has been tested successfully unless it has actually connected and completed a real conversation.
+
+---
+
+# 20. FINAL DELIVERABLES
+
+Deliver:
+1. Complete responsive AI Aaji website.
+2. Premium styling and reusable components.
+3. Functional Gemini Realtime voice demo using the verified compatible model and Aoede voice.
+4. Floating chatbot with AI Aaji product knowledge.
+5. Free download section.
+6. Base and Premium pricing.
+7. Correct prefilled email purchase actions.
+8. Founder profiles with replaceable portrait images.
+9. FAQ and footer.
+10. Privacy and terms drafts.
+11. Safe environment configuration example.
+12. Setup and deployment instructions.
+13. A clear report of what works, what needs credentials, and what needs founder-provided assets.
+
+## Final execution instruction
+
+Start by inspecting the current project.
+
+Then implement the complete website, install any necessary compatible dependencies, run it, test the primary user journeys, fix the errors, and report the result.
+
+Prioritize beautiful visual design, genuine live voice interaction, accurate product knowledge, working contact-to-purchase actions, and honest handling of missing configuration.
+
+Do not return only a plan, sample code, or wireframe. Implement the website in the available project environment.
+
+Do not invent missing product capabilities, founder assets, release files, or API configuration. Make unknowns easy to update and clearly report them.

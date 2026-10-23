@@ -1,0 +1,10 @@
+{
+  "name": "AI Aaji — Intelligent AI Personal Assistant",
+  "description": "Official website for AI Aaji with live Gemini Realtime voice demo, intelligent chatbot, download access, pricing, and contact-to-purchase.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

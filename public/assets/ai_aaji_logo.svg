@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <defs>
+    <linearGradient id="aajiGrad1" x1="4" y1="4" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#8065FF" />
+      <stop offset="50%" stop-color="#B8A6FF" />
+      <stop offset="100%" stop-color="#35D9F2" />
+    </linearGradient>
+    <radialGradient id="aajiGlow" cx="24" cy="24" r="20" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#8065FF" stop-opacity="0.8" />
+      <stop offset="60%" stop-color="#35D9F2" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#080B14" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <!-- Background glow -->
+  <circle cx="24" cy="24" r="22" fill="url(#aajiGlow)" />
+  <!-- Outer orbital ring -->
+  <circle cx="24" cy="24" r="20" stroke="url(#aajiGrad1)" stroke-width="1.5" stroke-dasharray="3 2" opacity="0.75" />
+  <!-- Secondary ring -->
+  <circle cx="24" cy="24" r="16" stroke="#35D9F2" stroke-width="1" opacity="0.5" />
+  <!-- Core sphere -->
+  <circle cx="24" cy="24" r="12" fill="url(#aajiGrad1)" />
+  <!-- Inner refractive center -->
+  <circle cx="21" cy="21" r="3.5" fill="#FFFFFF" opacity="0.8" />
+  <!-- Audio wave nodes -->
+  <circle cx="16" cy="24" r="1.5" fill="#FFFFFF" />
+  <circle cx="24" cy="24" r="2" fill="#FFFFFF" />
+  <circle cx="32" cy="24" r="1.5" fill="#FFFFFF" />
+</svg>

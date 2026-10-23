@@ -1,0 +1,155 @@
+import React, { useState } from 'react';
+import { X, Copy, Check, Mail, ExternalLink, Globe } from 'lucide-react';
+import { PricingPlan, PRODUCT_IDENTITY } from '../data/productData';
+
+interface PurchaseModalProps {
+  plan: PricingPlan | null;
+  onClose: () => void;
+}
+
+export const PurchaseModal: React.FC<PurchaseModalProps> = ({ plan, onClose }) => {
+  const [copiedEmail, setCopiedEmail] = useState(false);
+  const [copiedBody, setCopiedBody] = useState(false);
+
+  if (!plan) return null;
+
+  const mailtoUrl = `mailto:${PRODUCT_IDENTITY.contactEmail}?subject=${encodeURIComponent(
+    plan.mailtoSubject || ''
+  )}&body=${encodeURIComponent(plan.mailtoBody || '')}`;
+
+  const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
+    PRODUCT_IDENTITY.contactEmail
+  )}&su=${encodeURIComponent(plan.mailtoSubject || '')}&body=${encodeURIComponent(
+    plan.mailtoBody || ''
+  )}`;
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText(PRODUCT_IDENTITY.contactEmail);
+    setCopiedEmail(true);
+    setTimeout(() => setCopiedEmail(false), 2000);
+  };
+
+  const handleCopyBody = () => {
+    if (plan.mailtoBody) {
+      navigator.clipboard.writeText(plan.mailtoBody);
+      setCopiedBody(true);
+      setTimeout(() => setCopiedBody(false), 2000);
+    }
+  };
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-in fade-in duration-200">
+      <div className="relative w-full max-w-lg glass-panel-elevated rounded-3xl p-6 sm:p-8 border border-white/15 shadow-2xl overflow-hidden max-h-[90vh] overflow-y-auto">
+        {/* Close Button */}
+        <button
+          onClick={onClose}
+          className="absolute top-5 right-5 p-2 rounded-full text-[#A7B0C5] hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
+          aria-label="Close modal"
+        >
+          <X className="w-5 h-5" />
+        </button>
+
+        {/* Modal Header */}
+        <div className="flex items-center gap-3.5 mb-6">
+          <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-[#8065FF] to-[#35D9F2] p-[1.5px] flex items-center justify-center shrink-0">
+            <div className="w-full h-full rounded-[14px] bg-[#080B14] flex items-center justify-center">
+              <Mail className="w-5 h-5 text-[#B8A6FF]" />
+            </div>
+          </div>
+          <div>
+            <h3 className="font-heading text-xl font-bold text-white">
+              {plan.name} Edition Purchase Enquiry
+            </h3>
+            <p className="text-xs text-[#A7B0C5]">
+              Contact-to-purchase • Price: <strong className="text-white">{plan.priceDisplay}</strong>
+            </p>
+          </div>
+        </div>
+
+        <p className="text-xs sm:text-sm text-[#A7B0C5] leading-relaxed mb-6">
+          License purchases are arranged directly via email with the founders. An editable draft will open in your mail client for your review. No email is sent automatically.
+        </p>
+
+        {/* Primary Action Buttons */}
+        <div className="space-y-3 mb-6">
+          {/* Default Mail Client Trigger */}
+          <a
+            href={mailtoUrl}
+            className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-[#8065FF] to-[#35D9F2] text-white font-semibold text-sm flex items-center justify-center gap-2 shadow-lg shadow-[#8065FF]/25 hover:opacity-95 transition-all"
+          >
+            <Mail className="w-4 h-4" />
+            Open in Default Email App
+            <ExternalLink className="w-3.5 h-3.5 opacity-70" />
+          </a>
+
+          {/* Webmail Gmail Compose Alternative */}
+          <a
+            href={gmailComposeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full py-3 px-6 rounded-xl bg-[#182136] hover:bg-[#1f2b45] text-[#F7F8FF] border border-white/10 hover:border-white/20 font-medium text-xs flex items-center justify-center gap-2 transition-all"
+          >
+            <Globe className="w-4 h-4 text-[#35D9F2]" />
+            Open in Gmail Web Browser
+            <ExternalLink className="w-3 h-3 opacity-60" />
+          </a>
+        </div>
+
+        {/* Fallback Copy Section */}
+        <div className="bg-[#080B14] rounded-2xl p-4 sm:p-5 border border-white/10 space-y-3">
+          <span className="text-xs font-semibold text-[#F7F8FF] block">
+            Manual Copy & Send Fallback
+          </span>
+          <p className="text-[11px] text-[#A7B0C5] leading-relaxed">
+            If your device does not have an active email client, simply copy the address and message template below into your preferred email provider:
+          </p>
+
+          {/* Recipient Email Row */}
+          <div className="flex items-center justify-between p-2.5 rounded-lg bg-[#12192A] border border-white/5">
+            <span className="text-xs font-mono text-[#35D9F2] select-all">
+              {PRODUCT_IDENTITY.contactEmail}
+            </span>
+            <button
+              onClick={handleCopyEmail}
+              className="text-xs font-medium text-white hover:text-[#B8A6FF] px-2.5 py-1 rounded bg-white/5 hover:bg-white/10 flex items-center gap-1.5 transition-colors cursor-pointer"
+            >
+              {copiedEmail ? <Check className="w-3.5 h-3.5 text-[#43D9A3]" /> : <Copy className="w-3.5 h-3.5" />}
+              {copiedEmail ? 'Copied!' : 'Copy Email'}
+            </button>
+          </div>
+
+          {/* Subject Preview */}
+          <div className="p-2.5 rounded-lg bg-[#12192A] border border-white/5 text-xs">
+            <span className="text-[#A7B0C5] block mb-0.5 text-[10px] uppercase font-semibold">Subject:</span>
+            <span className="text-white font-mono text-xs">{plan.mailtoSubject}</span>
+          </div>
+
+          {/* Body Preview & Copy */}
+          <div className="p-2.5 rounded-lg bg-[#12192A] border border-white/5 text-xs">
+            <div className="flex items-center justify-between mb-1.5">
+              <span className="text-[#A7B0C5] text-[10px] uppercase font-semibold">Message Body:</span>
+              <button
+                onClick={handleCopyBody}
+                className="text-[11px] font-medium text-[#B8A6FF] hover:text-white flex items-center gap-1 transition-colors cursor-pointer"
+              >
+                {copiedBody ? <Check className="w-3 h-3 text-[#43D9A3]" /> : <Copy className="w-3 h-3" />}
+                {copiedBody ? 'Copied' : 'Copy Text'}
+              </button>
+            </div>
+            <pre className="text-[11px] text-[#F7F8FF]/80 whitespace-pre-wrap font-sans max-h-32 overflow-y-auto bg-black/30 p-2 rounded border border-white/5">
+              {plan.mailtoBody}
+            </pre>
+          </div>
+
+          <button
+            onClick={handleCopyBody}
+            className="w-full py-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-xs font-semibold text-[#F7F8FF] flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
+          >
+            {copiedBody ? <Check className="w-3.5 h-3.5 text-[#43D9A3]" /> : <Copy className="w-3.5 h-3.5" />}
+            {copiedBody ? 'Draft Template Copied to Clipboard!' : 'Copy Complete Message Template'}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
