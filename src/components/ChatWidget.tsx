@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
 import {
-  MessageSquare,
   X,
   Minus,
   Send,
@@ -129,7 +128,7 @@ export const ChatWidget: React.FC = () => {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-40 select-none">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 select-none">
       {/* Collapsed Orb Button */}
       {!isOpen && (
         <button
@@ -137,14 +136,14 @@ export const ChatWidget: React.FC = () => {
             setIsOpen(true);
             setIsMinimized(false);
           }}
-          className="relative group p-3.5 rounded-full bg-gradient-to-tr from-[#8065FF] to-[#35D9F2] text-white shadow-xl shadow-[#8065FF]/40 hover:scale-105 active:scale-95 transition-all cursor-pointer flex items-center justify-center focus:outline-none"
+          className="relative group p-3.5 rounded-full btn-gradient text-white shadow-xl shadow-[var(--accent-primary)]/40 hover:scale-105 active:scale-95 transition-all cursor-pointer flex items-center justify-center focus:outline-none"
           aria-label="Open AI Aaji Chatbot"
         >
           {/* Subtle pulse ring */}
-          <span className="absolute -inset-1 rounded-full bg-gradient-to-r from-[#8065FF] to-[#35D9F2] opacity-40 blur-sm group-hover:opacity-75 animate-pulse" />
+          <span className="absolute -inset-1 rounded-full badge-gradient opacity-40 blur-sm group-hover:opacity-75 animate-pulse" />
           
-          <div className="relative w-8 h-8 rounded-full bg-[#080B14] flex items-center justify-center">
-            <Sparkles className="w-4 h-4 text-[#B8A6FF]" />
+          <div className="relative w-8 h-8 rounded-full bg-[var(--bg-main)] flex items-center justify-center">
+            <Sparkles className="w-4 h-4 text-[var(--accent-primary)]" />
           </div>
 
           <span className="sr-only">Chat with AI Aaji</span>
@@ -154,38 +153,38 @@ export const ChatWidget: React.FC = () => {
       {/* Expanded Chat Window */}
       {isOpen && (
         <div
-          className={`relative w-[360px] sm:w-[410px] glass-panel-elevated rounded-3xl border border-white/15 shadow-2xl overflow-hidden flex flex-col transition-all duration-300 ${
+          className={`relative w-[calc(100vw-2rem)] max-w-[360px] sm:max-w-[410px] bg-[var(--bg-card)] rounded-3xl border border-[var(--border-elevated)] shadow-2xl overflow-hidden flex flex-col transition-all duration-300 ${
             isMinimized ? 'h-[64px]' : 'h-[580px] max-h-[85vh]'
           }`}
         >
           {/* Window Header */}
-          <div className="bg-[#080B14]/90 px-4 py-3 border-b border-white/10 flex items-center justify-between shrink-0">
+          <div className="bg-[var(--bg-elevated)] px-4 py-3 border-b border-[var(--border-subtle)] flex items-center justify-between shrink-0">
             <div className="flex items-center gap-2.5">
-              <div className="relative w-7 h-7 rounded-full bg-gradient-to-tr from-[#8065FF] to-[#35D9F2] p-[1px] flex items-center justify-center">
-                <div className="w-full h-full rounded-full bg-[#080B14] flex items-center justify-center">
-                  <div className="w-3.5 h-3.5 rounded-full bg-[#8065FF]" />
+              <div className="relative w-7 h-7 rounded-full bg-[var(--gradient-btn)] p-[1px] flex items-center justify-center">
+                <div className="w-full h-full rounded-full bg-[var(--bg-main)] flex items-center justify-center">
+                  <div className="w-3.5 h-3.5 rounded-full bg-[var(--accent-primary)]" />
                 </div>
               </div>
               <div>
-                <h3 className="text-xs font-semibold text-white flex items-center gap-1.5">
+                <h3 className="text-xs font-semibold text-[var(--text-main)] flex items-center gap-1.5">
                   AI Aaji Assistant
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#43D9A3] animate-pulse" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[var(--status-success)] animate-pulse" />
                 </h3>
-                <span className="text-[10px] text-[#35D9F2]">Workflow Architect Active</span>
+                <span className="text-[10px] text-[var(--accent-secondary)]">Workflow Architect Active</span>
               </div>
             </div>
 
             <div className="flex items-center gap-1">
               <button
                 onClick={() => setIsMinimized(!isMinimized)}
-                className="p-1.5 rounded-lg text-[#A7B0C5] hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
+                className="p-1.5 rounded-lg text-[var(--text-secondary)] hover:text-[var(--text-main)] hover:bg-[var(--glass-pill-bg)] transition-colors cursor-pointer"
                 title={isMinimized ? 'Expand' : 'Minimize'}
               >
                 <Minus className="w-4 h-4" />
               </button>
               <button
                 onClick={() => setIsOpen(false)}
-                className="p-1.5 rounded-lg text-[#A7B0C5] hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
+                className="p-1.5 rounded-lg text-[var(--text-secondary)] hover:text-[var(--text-main)] hover:bg-[var(--glass-pill-bg)] transition-colors cursor-pointer"
                 title="Close"
               >
                 <X className="w-4 h-4" />
@@ -196,34 +195,34 @@ export const ChatWidget: React.FC = () => {
           {!isMinimized && (
             <>
               {/* Navigation Shortcuts Bar */}
-              <div className="px-3 py-2 bg-[#0D1220] border-b border-white/5 flex items-center justify-between gap-1 overflow-x-auto text-[11px] text-[#A7B0C5] shrink-0">
+              <div className="px-3 py-2 bg-[var(--bg-card)] border-b border-[var(--border-subtle)] flex items-center justify-between gap-1 overflow-x-auto text-[11px] text-[var(--text-secondary)] shrink-0">
                 <button
                   onClick={() => scrollToSection('live-demo')}
-                  className="px-2 py-1 rounded hover:bg-white/5 hover:text-[#35D9F2] flex items-center gap-1 shrink-0 cursor-pointer"
+                  className="px-2 py-1 rounded hover:bg-[var(--glass-pill-bg)] hover:text-[var(--accent-secondary)] flex items-center gap-1 shrink-0 cursor-pointer"
                 >
-                  <Mic className="w-3 h-3 text-[#35D9F2]" />
+                  <Mic className="w-3 h-3 text-[var(--accent-secondary)]" />
                   Voice Demo
                 </button>
                 <button
                   onClick={() => scrollToSection('pricing')}
-                  className="px-2 py-1 rounded hover:bg-white/5 hover:text-[#B8A6FF] flex items-center gap-1 shrink-0 cursor-pointer"
+                  className="px-2 py-1 rounded hover:bg-[var(--glass-pill-bg)] hover:text-[var(--accent-primary)] flex items-center gap-1 shrink-0 cursor-pointer"
                 >
-                  <Tag className="w-3 h-3 text-[#B8A6FF]" />
+                  <Tag className="w-3 h-3 text-[var(--accent-primary)]" />
                   Pricing
                 </button>
                 <a
                   href={PRODUCT_IDENTITY.downloadUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-2 py-1 rounded hover:bg-white/5 hover:text-[#43D9A3] flex items-center gap-1 shrink-0"
+                  className="px-2 py-1 rounded hover:bg-[var(--glass-pill-bg)] hover:text-[var(--status-success)] flex items-center gap-1 shrink-0"
                 >
-                  <Download className="w-3 h-3 text-[#43D9A3]" />
+                  <Download className="w-3 h-3 text-[var(--status-success)]" />
                   Drive Folder
                   <ExternalLink className="w-2.5 h-2.5 opacity-60" />
                 </a>
                 <a
                   href={`mailto:${PRODUCT_IDENTITY.contactEmail}`}
-                  className="px-2 py-1 rounded hover:bg-white/5 hover:text-white flex items-center gap-1 shrink-0"
+                  className="px-2 py-1 rounded hover:bg-[var(--glass-pill-bg)] hover:text-[var(--text-main)] flex items-center gap-1 shrink-0"
                 >
                   <Mail className="w-3 h-3" />
                   Contact
@@ -231,7 +230,7 @@ export const ChatWidget: React.FC = () => {
               </div>
 
               {/* Messages Container */}
-              <div className="flex-1 overflow-y-auto p-4 space-y-3.5 text-xs bg-[#080B14]/40 font-sans">
+              <div className="flex-1 overflow-y-auto p-4 space-y-3.5 text-xs bg-[var(--bg-main)]/50 font-sans">
                 {messages.map((msg) => (
                   <div
                     key={msg.id}
@@ -240,10 +239,10 @@ export const ChatWidget: React.FC = () => {
                     }`}
                   >
                     <div
-                      className={`max-w-[85%] rounded-2xl p-3.5 leading-relaxed whitespace-pre-wrap ${
+                      className={`max-w-[85%] rounded-2xl p-3.5 leading-relaxed whitespace-pre-wrap shadow-sm ${
                         msg.sender === 'user'
-                          ? 'bg-[#8065FF] text-white rounded-tr-none'
-                          : 'bg-[#182136] text-[#F7F8FF] border border-white/10 rounded-tl-none'
+                          ? 'bg-[var(--gradient-btn)] text-white rounded-tr-none'
+                          : 'bg-[var(--bg-elevated)] text-[var(--text-main)] border border-[var(--border-subtle)] rounded-tl-none'
                       }`}
                     >
                       {msg.text}
@@ -251,8 +250,8 @@ export const ChatWidget: React.FC = () => {
 
                     {/* Tool Badge & Transparency Notice */}
                     {msg.sender === 'assistant' && msg.toolStatus && (
-                      <div className="flex items-center gap-1 mt-1 px-1 text-[10px] text-[#35D9F2]/90">
-                        <CheckCircle2 className="w-3 h-3 text-[#43D9A3]" />
+                      <div className="flex items-center gap-1 mt-1 px-1 text-[10px] text-[var(--accent-secondary)]">
+                        <CheckCircle2 className="w-3 h-3 text-[var(--status-success)]" />
                         <span>{msg.toolStatus}</span>
                       </div>
                     )}
@@ -261,15 +260,15 @@ export const ChatWidget: React.FC = () => {
 
                 {/* Workflow Status Banner during processing */}
                 {isLoading && (
-                  <div className="flex flex-col gap-2 p-3 rounded-2xl bg-[#182136] border border-white/10 max-w-[280px]">
-                    <div className="flex items-center gap-1.5 text-[11px] text-[#35D9F2]">
-                      <Wrench className="w-3 h-3 animate-spin text-[#35D9F2]" />
+                  <div className="flex flex-col gap-2 p-3 rounded-2xl bg-[var(--bg-elevated)] border border-[var(--border-subtle)] max-w-[280px]">
+                    <div className="flex items-center gap-1.5 text-[11px] text-[var(--accent-secondary)]">
+                      <Wrench className="w-3 h-3 animate-spin text-[var(--accent-secondary)]" />
                       <span>{activeWorkflowStatus || 'Workflow Architect executing...'}</span>
                     </div>
                     <div className="flex items-center gap-1.5 pl-1">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#8065FF] animate-bounce" />
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#35D9F2] animate-bounce [animation-delay:0.15s]" />
-                      <span className="w-1.5 h-1.5 rounded-full bg-white animate-bounce [animation-delay:0.3s]" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent-primary)] animate-bounce" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent-secondary)] animate-bounce [animation-delay:0.15s]" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[var(--text-main)] animate-bounce [animation-delay:0.3s]" />
                     </div>
                   </div>
                 )}
@@ -278,8 +277,8 @@ export const ChatWidget: React.FC = () => {
               </div>
 
               {/* Suggested Questions Pills */}
-              <div className="p-2.5 bg-[#0D1220]/90 border-t border-white/5 shrink-0 overflow-x-auto">
-                <span className="text-[10px] text-[#A7B0C5] block mb-1.5 px-1 font-semibold">
+              <div className="p-2.5 bg-[var(--bg-card)] border-t border-[var(--border-subtle)] shrink-0 overflow-x-auto">
+                <span className="text-[10px] text-[var(--text-secondary)] block mb-1.5 px-1 font-semibold">
                   Suggested Questions:
                 </span>
                 <div className="flex flex-wrap gap-1.5 max-h-20 overflow-y-auto">
@@ -287,7 +286,7 @@ export const ChatWidget: React.FC = () => {
                     <button
                       key={idx}
                       onClick={() => handleSendMessage(q)}
-                      className="px-2.5 py-1 rounded-full bg-white/5 hover:bg-white/10 text-[10px] text-[#A7B0C5] hover:text-white border border-white/5 transition-colors cursor-pointer text-left"
+                      className="px-2.5 py-1 rounded-full bg-[var(--glass-pill-bg)] hover:bg-[var(--bg-hover)] text-[10px] text-[var(--text-secondary)] hover:text-[var(--text-main)] border border-[var(--border-subtle)] transition-colors cursor-pointer text-left"
                     >
                       {q}
                     </button>
@@ -301,19 +300,19 @@ export const ChatWidget: React.FC = () => {
                   e.preventDefault();
                   handleSendMessage();
                 }}
-                className="p-3 bg-[#080B14] border-t border-white/10 flex items-center gap-2 shrink-0"
+                className="p-3 bg-[var(--bg-elevated)] border-t border-[var(--border-subtle)] flex items-center gap-2 shrink-0"
               >
                 <input
                   type="text"
                   value={inputMessage}
                   onChange={(e) => setInputMessage(e.target.value)}
                   placeholder="Ask about features, Google Drive, pricing..."
-                  className="flex-1 bg-[#12192A] border border-white/10 rounded-full px-4 py-2 text-xs text-white placeholder-[#A7B0C5] focus:outline-none focus:border-[#8065FF]"
+                  className="flex-1 bg-[var(--bg-main)] border border-[var(--border-subtle)] rounded-full px-4 py-2 text-xs text-[var(--text-main)] placeholder-[var(--text-muted)] focus:outline-none focus:border-[var(--accent-primary)] shadow-inner"
                 />
                 <button
                   type="submit"
                   disabled={isLoading || !inputMessage.trim()}
-                  className="p-2.5 rounded-full bg-gradient-to-r from-[#8065FF] to-[#35D9F2] text-white disabled:opacity-40 hover:opacity-95 transition-all cursor-pointer"
+                  className="p-2.5 rounded-full btn-gradient text-white disabled:opacity-40 hover:opacity-95 transition-all cursor-pointer shadow-md"
                   title="Send"
                 >
                   <Send className="w-3.5 h-3.5" />

@@ -84,7 +84,7 @@ export const FOUNDERS: Founder[] = [
     role: 'Co-Founder & Product Lead',
     roleLabel: 'Product & Experience',
     title: 'Product Vision & Systems',
-    bio: 'Abhinav leads the product vision and experience of AI Aaji. As a developer and product builder, he focuses on turning ambitious ideas into practical experiences—shaping how the assistant looks, feels, and helps people accomplish everyday digital tasks.\n\nHis focus is on making AI approachable, useful, and thoughtfully designed around the people who use it.',
+    bio: 'Abhinav Singh is the Co-Founder & Product Lead of AI Aaji. He is a 4th year student pursuing Electronics and Computer Engineering (EComp) at Agnel Institute of Engineering and Design, Goa (AIEM Goa), and previously completed an internship at GMR Mopa Airport (Goa).\n\nAs a developer and product builder, Abhinav leads the product vision and experience—shaping how the assistant looks, feels, and intuitively helps people accomplish everyday digital tasks.',
     isDeveloper: true,
     avatarPlaceholder: 'AS',
     imagePath: '/assets/aistudio/abhinav_2dac3e8f.jpeg',
@@ -97,7 +97,7 @@ export const FOUNDERS: Founder[] = [
     role: 'Co-Founder & Technical Lead',
     roleLabel: 'Engineering & Systems',
     title: 'Architecture & Voice Intelligence',
-    bio: 'Tanisha Kolhar leads the technical development of AI Aaji, helping translate the product vision into working software. As a developer and technical builder, she focuses on engineering the systems, integrations, and capabilities that power the assistant.\n\nHer focus is on making the technology behind AI Aaji reliable, capable, and ready to evolve.',
+    bio: 'Tanisha Kolhar is the Co-Founder & Technical Lead of AI Aaji. She studied Electronics and Computer Engineering (EComp) at Agnel Institute of Engineering and Design, Goa (AIEM Goa), and currently works with Emersion as a BMS (Building Management Systems) Engineer.\n\nAs a developer and technical builder, Tanisha leads the core systems engineering, architecture, and voice intelligence that power the assistant.',
     isDeveloper: true,
     avatarPlaceholder: 'TK',
     imagePath: '/assets/aistudio/tanisha_fbdc2cd8.jpeg',
@@ -343,9 +343,9 @@ export const FAQ_ITEMS: FAQItem[] = [
 
 export const SYSTEM_PROMPT_KNOWLEDGE = `
 You are AI Aaji, an intelligent AI-powered personal assistant created by developer-founders Abhinav Singh and Tanisha Kolhar.
-Abhinav Singh is Co-Founder & Product Lead (Product & Experience).
-Tanisha Kolhar is Co-Founder & Technical Lead (Engineering & Systems).
-Both founders are active developers.
+Abhinav Singh is Co-Founder & Product Lead (Product & Experience). He is a 4th year student pursuing Electronics and Computer Engineering (EComp) at Agnel Institute of Engineering and Design, Goa (AIEM Goa) and previously completed an internship at GMR Mopa Airport (Goa). He leads product vision and user experience.
+Tanisha Kolhar is Co-Founder & Technical Lead (Engineering & Systems). She studied Electronics and Computer Engineering (EComp) at Agnel Institute of Engineering and Design, Goa (AIEM Goa) and currently works with Emersion as a BMS (Building Management Systems) Engineer. She leads technical architecture, voice intelligence, and systems engineering.
+Both founders are active developers and engineers.
 
 Your core purpose is to make digital interactions simpler and more natural through real-time voice conversations, multimodal intelligence, supported device controls, and everyday task assistance.
 

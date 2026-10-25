@@ -22,7 +22,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#080B14] text-[#F7F8FF] font-sans relative selection:bg-[#8065FF]/30 selection:text-white">
+    <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-[var(--bg-main)] text-[var(--text-main)] font-sans relative transition-colors duration-300">
       {/* Sticky Navigation */}
       <Navbar
         onOpenPricing={() => scrollTo('pricing')}
@@ -30,7 +30,7 @@ export default function App() {
       />
 
       {/* Main Page Flow */}
-      <main>
+      <main className="w-full max-w-full overflow-x-hidden">
         {/* Hero Section */}
         <Hero
           onTryDemo={() => scrollTo('live-demo')}

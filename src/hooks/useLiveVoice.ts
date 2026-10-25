@@ -292,7 +292,23 @@ export function useLiveVoice() {
       };
 
       ws.onclose = () => {
-        setVoiceState((current) => (current === 'error' ? 'error' : 'idle'));
+        stopAudioTracks();
+        stopActiveSources();
+        setVoiceState((current) => {
+          if (current !== 'idle' && current !== 'error') {
+            setTranscripts((prev) => [
+              ...prev,
+              {
+                id: Math.random().toString(),
+                role: 'system',
+                text: 'Voice session closed. Tap the microphone to talk anytime.',
+                timestamp: new Date(),
+              },
+            ]);
+            return 'idle';
+          }
+          return current;
+        });
       };
     } catch (err: any) {
       console.error('Failed to initialize audio contexts:', err);

@@ -15,9 +15,27 @@
     <link rel="icon" type="image/svg+xml" href="/assets/ai_aaji_logo.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <script>
+      (function() {
+        try {
+          var savedTheme = localStorage.getItem('ai_aaji_theme');
+          if (savedTheme === 'editorial') {
+            document.documentElement.setAttribute('data-theme', 'editorial');
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('editorial');
+          } else {
+            document.documentElement.setAttribute('data-theme', 'midnight');
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('editorial');
+          }
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'midnight');
+        }
+      })();
+    </script>
   </head>
-  <body class="bg-[#080B14] text-[#F7F8FF] antialiased selection:bg-[#8065FF]/30 selection:text-[#F7F8FF]">
+  <body class="bg-[var(--bg-main)] text-[var(--text-main)] antialiased transition-colors duration-300">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

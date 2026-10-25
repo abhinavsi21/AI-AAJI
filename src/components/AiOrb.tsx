@@ -13,12 +13,12 @@ export const AiOrb: React.FC<AiOrbProps> = ({
   audioLevel = 0,
   className = '',
 }) => {
-  // Dimension mappings
+  // Responsive dimension mappings to prevent mobile overflow while maintaining desktop presence
   const sizeMap = {
     sm: { core: 'w-16 h-16', outer: 'w-24 h-24', ring1: 'w-20 h-20', ring2: 'w-28 h-28' },
-    md: { core: 'w-32 h-32', outer: 'w-48 h-48', ring1: 'w-40 h-40', ring2: 'w-52 h-52' },
-    lg: { core: 'w-48 h-48', outer: 'w-72 h-72', ring1: 'w-60 h-60', ring2: 'w-80 h-80' },
-    xl: { core: 'w-64 h-64', outer: 'w-96 h-96', ring1: 'w-80 h-80', ring2: 'w-[420px] h-[420px]' },
+    md: { core: 'w-24 h-24 sm:w-32 sm:h-32', outer: 'w-36 h-36 sm:w-48 sm:h-48', ring1: 'w-32 h-32 sm:w-40 sm:h-40', ring2: 'w-40 h-40 sm:w-52 sm:h-52' },
+    lg: { core: 'w-32 h-32 sm:w-48 sm:h-48', outer: 'w-48 h-48 sm:w-72 sm:h-72', ring1: 'w-40 h-40 sm:w-60 sm:h-60', ring2: 'w-56 h-56 sm:w-80 sm:h-80' },
+    xl: { core: 'w-40 h-40 sm:w-64 sm:h-64', outer: 'w-60 h-60 sm:w-96 sm:h-96', ring1: 'w-52 h-52 sm:w-80 sm:h-80', ring2: 'w-64 h-64 sm:w-[420px] sm:h-[420px]' },
   };
 
   const currentSize = sizeMap[size];
@@ -30,23 +30,12 @@ export const AiOrb: React.FC<AiOrbProps> = ({
     ? 1.05 
     : 1;
 
-  // Glow intensity based on state
-  const glowColor =
-    state === 'error'
-      ? 'rgba(255, 107, 129, 0.4)'
-      : state === 'speaking'
-      ? 'rgba(53, 217, 242, 0.5)'
-      : state === 'listening'
-      ? 'rgba(128, 101, 255, 0.6)'
-      : 'rgba(128, 101, 255, 0.35)';
-
   return (
     <div className={`orb-container relative flex items-center justify-center select-none ${className}`}>
       {/* Ambient background glow */}
       <div
         className={`ai-orb-glow ${currentSize.outer} absolute transition-all duration-300`}
         style={{
-          background: `radial-gradient(circle, ${glowColor} 0%, rgba(53, 217, 242, 0.15) 50%, transparent 75%)`,
           transform: `scale(${dynamicScale * 1.1})`,
         }}
       />
@@ -55,7 +44,7 @@ export const AiOrb: React.FC<AiOrbProps> = ({
       <div
         className={`ai-orb-ring-secondary ${currentSize.ring2} opacity-40`}
         style={{
-          borderColor: state === 'error' ? '#FF6B81' : state === 'speaking' ? '#35D9F2' : '#8065FF',
+          borderColor: state === 'error' ? 'var(--status-error)' : state === 'speaking' ? 'var(--accent-secondary)' : 'var(--accent-primary)',
         }}
       />
 
@@ -63,7 +52,7 @@ export const AiOrb: React.FC<AiOrbProps> = ({
       <div
         className={`ai-orb-ring ${currentSize.ring1} opacity-60`}
         style={{
-          borderColor: state === 'speaking' ? '#35D9F2' : '#B8A6FF',
+          borderColor: state === 'speaking' ? 'var(--accent-secondary)' : 'var(--accent-highlight)',
         }}
       />
 
@@ -72,7 +61,7 @@ export const AiOrb: React.FC<AiOrbProps> = ({
         className={`ai-orb-core ${currentSize.core} relative flex items-center justify-center cursor-pointer`}
         style={{
           transform: `scale(${dynamicScale})`,
-          boxShadow: `0 0 ${30 + audioLevel * 60}px ${glowColor}, 0 0 ${60 + audioLevel * 80}px rgba(53, 217, 242, 0.3), inset 0 0 40px rgba(255, 255, 255, 0.4)`,
+          boxShadow: `0 0 ${30 + audioLevel * 60}px var(--ai-orb-glow-color), 0 0 ${60 + audioLevel * 80}px var(--ai-orb-glow-secondary), inset 0 0 40px rgba(255, 255, 255, 0.4)`,
         }}
       >
         {/* Internal refractive highlight */}
@@ -86,16 +75,22 @@ export const AiOrb: React.FC<AiOrbProps> = ({
               style={{ height: `${12 + audioLevel * 32}px` }}
             />
             <span
-              className="w-1 bg-[#35D9F2] rounded-full transition-all duration-75"
-              style={{ height: `${18 + audioLevel * 48}px` }}
+              className="w-1 rounded-full transition-all duration-75"
+              style={{
+                backgroundColor: 'var(--accent-secondary)',
+                height: `${18 + audioLevel * 48}px`,
+              }}
             />
             <span
               className="w-1 bg-white rounded-full transition-all duration-75"
               style={{ height: `${24 + audioLevel * 56}px` }}
             />
             <span
-              className="w-1 bg-[#B8A6FF] rounded-full transition-all duration-75"
-              style={{ height: `${18 + audioLevel * 48}px` }}
+              className="w-1 rounded-full transition-all duration-75"
+              style={{
+                backgroundColor: 'var(--accent-highlight)',
+                height: `${18 + audioLevel * 48}px`,
+              }}
             />
             <span
               className="w-1 bg-white/80 rounded-full transition-all duration-75"

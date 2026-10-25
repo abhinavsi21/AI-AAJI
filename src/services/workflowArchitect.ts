@@ -64,15 +64,26 @@ export class WorkflowArchitect {
       return { tool: TOOL_REGISTRY.getPricingAndPurchaseInfo, args: { edition } };
     }
 
-    // 3. Founders / Who built / Created / Abhinav / Tanisha
+    // 3. Founders / Who built / Created / Abhinav / Tanisha / Background / Education
     if (
       q.includes('founder') ||
       q.includes('who built') ||
       q.includes('who created') ||
       q.includes('who made') ||
+      q.includes('who is abhinav') ||
+      q.includes('who is tanisha') ||
       q.includes('abhinav') ||
       q.includes('tanisha') ||
-      q.includes('team')
+      q.includes('kolhar') ||
+      q.includes('team') ||
+      q.includes('study') ||
+      q.includes('college') ||
+      q.includes('education') ||
+      q.includes('background') ||
+      q.includes('airport') ||
+      q.includes('emersion') ||
+      q.includes('agnel') ||
+      q.includes('aiem')
     ) {
       return { tool: TOOL_REGISTRY.getFounderStory, args: {} };
     }
@@ -147,7 +158,7 @@ export class WorkflowArchitect {
           break;
 
         case 'getFounderStory':
-          reply = `AI Aaji was created by two developer-founders:\n\n• Abhinav Singh — Co-Founder & Product Lead (Product & Experience). He shapes the product vision, experience, and practical daily usability. Instagram: https://www.instagram.com/abhinavsinghofficial21/\n• Tanisha — Co-Founder & Technical Lead (Engineering & Systems). She engineers the core systems, architecture, and voice capabilities. Instagram: https://www.instagram.com/tanu_here_10/\n\nTheir shared philosophy: "We believe technology should work around people, not the other way around. AI Aaji is our step towards making AI more natural, accessible, and useful in everyday life."\n\nOfficial project Instagram: ${PRODUCT_IDENTITY.officialInstagramUrl}`;
+          reply = `AI Aaji was created by developer-founders Abhinav Singh and Tanisha Kolhar:\n\n• Abhinav Singh — Co-Founder & Product Lead (Product & Experience). He is a 4th year student pursuing Electronics and Computer Engineering (EComp) at Agnel Institute of Engineering and Design, Goa (AIEM Goa). He completed an internship at GMR Mopa Airport (Goa) and leads AI Aaji's product vision, design, and practical usability.\nInstagram: https://www.instagram.com/abhinavsinghofficial21/ (@abhinavsinghofficial21)\n\n• Tanisha Kolhar — Co-Founder & Technical Lead (Engineering & Systems). She studied Electronics and Computer Engineering (EComp) at Agnel Institute of Engineering and Design, Goa (AIEM Goa) and is currently working with Emersion as a BMS (Building Management Systems) Engineer. She engineers the core systems, architecture, and voice intelligence.\nInstagram: https://www.instagram.com/tanu_here_10/ (@tanu_here_10)\n\nTheir shared philosophy: "We believe technology should work around people, not the other way around. AI Aaji is our step towards making AI more natural, accessible, and useful in everyday life."\n\nOfficial project Instagram: ${PRODUCT_IDENTITY.officialInstagramUrl}`;
           break;
 
         case 'explainDesktopCapabilities':

@@ -40,7 +40,7 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
       </div>
 
       {showText && (
-        <span className={`font-heading font-bold ${textSizeMap[size]} tracking-tight text-white group-hover:text-[#B8A6FF] transition-colors`}>
+        <span className={`font-heading font-bold ${textSizeMap[size]} tracking-tight text-[var(--text-main)] group-hover:text-[var(--accent-primary)] transition-colors`}>
           {PRODUCT_IDENTITY.brandName}
         </span>
       )}

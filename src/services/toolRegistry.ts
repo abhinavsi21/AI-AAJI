@@ -162,7 +162,13 @@ export const TOOL_REGISTRY: Record<string, ToolDefinition> = {
           roleLabel: f.roleLabel,
           designation: f.name.includes('Abhinav')
             ? 'Abhinav Singh — Co-Founder & Product Lead'
-            : 'Tanisha — Co-Founder & Technical Lead',
+            : 'Tanisha Kolhar — Co-Founder & Technical Lead',
+          education: f.name.includes('Abhinav')
+            ? '4th year student pursuing Electronics and Computer Engineering (EComp) at Agnel Institute of Engineering and Design, Goa (AIEM Goa)'
+            : 'Electronics and Computer Engineering (EComp) at Agnel Institute of Engineering and Design, Goa (AIEM Goa)',
+          experience: f.name.includes('Abhinav')
+            ? 'Completed an internship at GMR Mopa Airport (Goa)'
+            : 'Working with Emersion as a BMS (Building Management Systems) Engineer',
           bio: f.bio,
           isDeveloper: f.isDeveloper,
           instagram: f.socials?.instagram,
